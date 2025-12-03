@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
@@ -12,13 +13,14 @@ import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [, setLocation] = useLocation();
 
   const navLinks = [
-    { label: 'Accueil', href: '#' },
-    { label: 'Qui sommes-nous', href: '#about' },
-    { label: 'Actualités', href: '#news' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/' },
+    { label: 'Qui sommes-nous', href: '/about' },
+    { label: 'Actualités', href: '/news' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -41,7 +43,11 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm"
+              onClick={(e) => {
+                e.preventDefault();
+                setLocation(link.href);
+              }}
+              className="text-foreground hover:text-primary transition-colors font-medium text-sm cursor-pointer"
             >
               {link.label}
             </a>
@@ -51,6 +57,7 @@ export default function Header() {
         {/* CTA and Mobile Menu Toggle */}
         <div className="flex items-center gap-4">
           <Button
+            onClick={() => setLocation('/donate')}
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold hidden sm:inline-flex"
             size="sm"
           >
@@ -80,13 +87,23 @@ export default function Header() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-foreground hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
+                className="text-foreground hover:text-primary transition-colors font-medium py-2 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setLocation(link.href);
+                  setIsMenuOpen(false);
+                }}
               >
                 {link.label}
               </a>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold w-full mt-2">
+            <Button 
+              onClick={() => {
+                setLocation('/donate');
+                setIsMenuOpen(false);
+              }}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold w-full mt-2"
+            >
               Faire un don
             </Button>
           </div>

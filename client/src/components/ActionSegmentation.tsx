@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Users, Building2, Handshake, ArrowRight } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 /**
  * Action Segmentation Component
@@ -17,9 +18,11 @@ interface ActionCardProps {
   actions: string[];
   cta: string;
   color: 'primary' | 'secondary' | 'accent';
+  href: string;
 }
 
-function ActionCard({ icon, title, description, actions, cta, color }: ActionCardProps) {
+function ActionCard({ icon, title, description, actions, cta, color, href }: ActionCardProps) {
+  const [, setLocation] = useLocation();
   const colorClasses = {
     primary: 'border-primary/20 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10',
     secondary: 'border-secondary/20 hover:border-secondary/50 hover:shadow-lg hover:shadow-secondary/10',
@@ -54,7 +57,10 @@ function ActionCard({ icon, title, description, actions, cta, color }: ActionCar
         ))}
       </div>
 
-      <Button className={`w-full font-semibold ${buttonClasses[color]}`}>
+      <Button 
+        onClick={() => setLocation(href)}
+        className={`w-full font-semibold ${buttonClasses[color]}`}
+      >
         {cta}
       </Button>
     </Card>
@@ -74,6 +80,7 @@ export default function ActionSegmentation() {
       ],
       cta: 'Je m\'engage',
       color: 'primary' as const,
+      href: '/engage-particulier',
     },
     {
       icon: <Building2 className="w-6 h-6 text-secondary" />,
@@ -84,8 +91,9 @@ export default function ActionSegmentation() {
         'Sponsoriser la campagne',
         'Mobiliser les salariés',
       ],
-      cta: 'Je contacte l\'équipe',
+      cta: 'Je contacte l\'\u00e9quipe',
       color: 'secondary' as const,
+      href: '/engage-entreprise',
     },
     {
       icon: <Handshake className="w-6 h-6 text-accent" />,
@@ -98,6 +106,7 @@ export default function ActionSegmentation() {
       ],
       cta: 'Devenir partenaire',
       color: 'accent' as const,
+      href: '/engage-association',
     },
   ];
 
@@ -123,6 +132,7 @@ export default function ActionSegmentation() {
               actions={segment.actions}
               cta={segment.cta}
               color={segment.color}
+              href={segment.href}
             />
           ))}
         </div>
