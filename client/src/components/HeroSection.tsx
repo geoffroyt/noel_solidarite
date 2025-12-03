@@ -15,7 +15,7 @@ export default function HeroSection() {
   );
 
   return (
-    <section className="relative bg-gradient-to-br from-background via-white to-background overflow-hidden py-16 md:py-24">
+    <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden py-16 md:py-24">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
@@ -39,21 +39,21 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button
+            <a
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base"
+              href="/donate" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base"
             >
               <Heart className="w-5 h-5 mr-2" />
               Faire un don maintenant
-            </Button>
-            <Button
+            </a>
+            <a
               size="lg"
-              variant="outline"
-              className="border-2 border-primary text-primary hover:bg-primary/5"
+              role="button"
+              href="/parrainer" className="border-2 border-primary text-primary hover:bg-primary/5"
             >
               <Gift className="w-5 h-5 mr-2" />
               Parrainer un enfant
-            </Button>
+            </a>
           </div>
 
           {/* Trust indicators */}
@@ -73,13 +73,14 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right Visual - Placeholder for image */}
-        <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-secondary/30 to-accent/20 flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          <div className="text-center z-10">
-            <Gift className="w-24 h-24 text-primary/40 mx-auto mb-4" />
-            <p className="text-muted-foreground">Image d'impact à venir</p>
-          </div>
+        {/* Right Visual - Image d'impact */}
+        <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-xl">
+          <img
+            src="/hero-impact.jpg"
+            alt="Noël de la Solidarité - Image d'impact"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
       </div>
     </section>

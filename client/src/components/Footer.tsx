@@ -13,15 +13,15 @@ export default function Footer() {
 
   const links = {
     navigation: [
-      { label: 'Accueil', href: '#' },
-      { label: 'À propos', href: '#about' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'Nous contacter', href: '#contact' },
+      { label: 'Accueil', href: '/' },
+      { label: 'À propos', href: '/about' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Nous contacter', href: '/contact' },
     ],
     legal: [
-      { label: 'Mentions légales', href: '#' },
-      { label: 'Politique de confidentialité', href: '#' },
-      { label: 'Conditions d\'utilisation', href: '#' },
+      { label: "Mentions légales", href: '/mentions-legales' },
+      { label: "Politique de confidentialité", href: '/politique-confidentialite' },
+       { label: "Conditions d'utilisation", href: '/conditions-utilisation' },
     ],
   };
 
@@ -33,7 +33,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-foreground text-white">
+    <footer className="bg-primary text-white">
       {/* Main Footer Content */}
       <div className="container py-16 md:py-20">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
@@ -61,7 +61,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-secondary transition-colors text-sm"
+                    className="text-white/70 hover:text-secondary-foreground transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-secondary transition-colors text-sm"
+                    className="text-white/70 hover:text-secondary-foreground transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -92,21 +92,21 @@ export default function Footer() {
             <h4 className="font-bold mb-4 text-white">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-secondary" />
+                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-secondary-foreground" />
                 <div className="text-sm text-white/70">
                   <p>Marseille, France</p>
                   <p>Guadeloupe</p>
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 flex-shrink-0 text-secondary" />
-                <a href="tel:+33123456789" className="text-sm text-white/70 hover:text-secondary transition-colors">
+                <Phone className="w-4 h-4 flex-shrink-0 text-secondary-foreground" />
+                <a href="tel:+33123456789" className="text-sm text-white/70 hover:text-secondary-foreground transition-colors">
                   +33 1 23 45 67 89
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 flex-shrink-0 text-secondary" />
-                <a href="mailto:contact@noelsolidarite.fr" className="text-sm text-white/70 hover:text-secondary transition-colors">
+                <Mail className="w-4 h-4 flex-shrink-0 text-secondary-foreground" />
+                <a href="mailto:contact@noelsolidarite.fr" className="text-sm text-white/70 hover:text-secondary-foreground transition-colors">
                   contact@noelsolidarite.fr
                 </a>
               </li>
@@ -131,7 +131,7 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="text-white/70 hover:text-secondary transition-colors"
+                className="text-white/70 hover:text-secondary-foreground transition-colors"
               >
                 <Icon className="w-5 h-5" />
               </a>
