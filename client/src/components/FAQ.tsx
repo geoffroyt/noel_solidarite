@@ -99,20 +99,6 @@ export default function FAQ() {
             />
           ))}
         </div>
-
-        {/* Additional Support */}
-        <div className="mt-12 p-8 bg-secondary/10 border-2 border-secondary rounded-lg text-center">
-          <h3 className="text-lg font-bold text-foreground mb-2">Vous n'avez pas trouvé votre réponse ?</h3>
-          <p className="text-muted-foreground mb-4">
-            Contactez-nous directement. Notre équipe est là pour vous aider.
-          </p>
-          <a
-            href="#contact"
-            className="inline-block px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/90 transition-colors"
-          >
-            Nous contacter
-          </a>
-        </div>
       </div>
     </section>
   );

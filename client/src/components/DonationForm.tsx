@@ -20,7 +20,7 @@ import { useDonation } from '@/hooks/useDonation';
 const donationSchema = z.object({
   donationType: z.enum(['ponctuel', 'regulier']),
   amount: z.number().min(1, 'Le montant doit être supérieur à 0'),
-  title: z.string().min(1, 'Veuillez sélectionner une civilité').optional(),
+  title: z.string().min(1, 'Veuillez sélectionner une civilité'),
   lastName: z.string().min(2, 'Le nom doit contenir au moins 2 caractères'),
   firstName: z.string().min(2, 'Le prénom doit contenir au moins 2 caractères'),
   email: z.string().email('Email invalide'),
@@ -28,11 +28,11 @@ const donationSchema = z.object({
   addressComplement: z.string().optional(),
   zipCode: z.string().regex(/^\d{5}$/, 'Code postal invalide'),
   city: z.string().min(2, 'Veuillez entrer une ville'),
-  country: z.string().default('France'),
+  country: z.string(),
   phone: z.string().optional(),
-  organization: z.boolean().default(false),
-  paymentMethod: z.enum(['card', 'sepa', 'cheque']).optional(),
-  coverFees: z.boolean().default(false),
+  organization: z.boolean(),
+  paymentMethod: z.enum(['card', 'sepa', 'cheque']),
+  coverFees: z.boolean(),
   howDidYouKnow: z.string().optional(),
 });
 
@@ -80,10 +80,18 @@ export default function DonationForm({ onSubmit }: DonationFormProps) {
     resolver: zodResolver(donationSchema),
     defaultValues: {
       donationType: 'ponctuel',
+      amount: 20, // Valeur par défaut
       country: 'France',
       paymentMethod: 'card',
       coverFees: false,
       title: 'mr-mme',
+      organization: false,
+      lastName: '',
+      firstName: '',
+      email: '',
+      address: '',
+      zipCode: '',
+      city: '',
     },
   });
 
@@ -94,14 +102,15 @@ export default function DonationForm({ onSubmit }: DonationFormProps) {
   const handleAmountClick = (value: number) => {
     setSelectedAmount(value);
     setCustomAmount('');
-    setValue('amount', value);
+    setValue('amount', value, { shouldValidate: true });
   };
 
   const handleCustomAmount = (value: string) => {
     setCustomAmount(value);
     setSelectedAmount(null);
     if (value) {
-      setValue('amount', parseFloat(value));
+      const numValue = parseFloat(value);
+      setValue('amount', numValue, { shouldValidate: true });
     }
   };
 
@@ -117,7 +126,7 @@ export default function DonationForm({ onSubmit }: DonationFormProps) {
 
   const taxBenefit = amount ? calculateTaxBenefit(amount) : null;
 
-  const onSubmitForm = async (data: any) => {
+  const onSubmitForm = async (data: DonationFormData) => {
     try {
       await submitDonation(data as DonationData);
       onSubmit(data as DonationData);
@@ -204,6 +213,7 @@ export default function DonationForm({ onSubmit }: DonationFormProps) {
                     />
                     <span className="text-lg font-semibold text-foreground">€</span>
                   </div>
+                  {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount.message}</p>}
                 </div>
 
                 {/* Tax Benefit Info */}
@@ -278,6 +288,7 @@ export default function DonationForm({ onSubmit }: DonationFormProps) {
                       </option>
                     ))}
                   </select>
+                  {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>}
                 </div>
 
                 {/* Name Fields */}
@@ -443,6 +454,7 @@ export default function DonationForm({ onSubmit }: DonationFormProps) {
 
                 {/* Payment Method */}
                 <div>
+                  <Label className="text-base font-semibold mb-4 block">Méthode de paiement <span className="text-red-500">*</span></Label>
                   <RadioGroup value={paymentMethod} onValueChange={(value) => setValue('paymentMethod', value as 'card' | 'sepa' | 'cheque')}>
                     <div className="space-y-3">
                       <div className="flex items-center space-x-2 p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
@@ -465,6 +477,7 @@ export default function DonationForm({ onSubmit }: DonationFormProps) {
                       </div>
                     </div>
                   </RadioGroup>
+                  {errors.paymentMethod && <p className="text-red-500 text-sm mt-1">{errors.paymentMethod.message}</p>}
                 </div>
               </div>
 

@@ -23,7 +23,6 @@ export default function Home() {
         <ImpactDashboard />
         <Testimonials />
         <FAQ />
-        <ContactForm />
       </main>
       <Footer />
     </div>

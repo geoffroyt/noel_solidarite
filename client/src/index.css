@@ -6,20 +6,20 @@
   /* Palette: Red Noël, Gold Warm, Cream, Charcoal, Forest Green */
   
   /* Couleurs de base */
-  --color-background: #d4a574;
-  --color-foreground: #2B2520;
+  --color-background: #F9F7F4; /* Crème/Blanc pour la légèreté */
+  --color-foreground: #2B2520; /* Charbon */
   
   /* Couleurs principales */
-  --color-primary: #A41E35;
-  --color-primary-foreground: #F9F7F4;
+  --color-primary: #A41E35; /* Rouge Noël */
+  --color-primary-foreground: #F9F7F4; /* Crème/Blanc */
   
   /* Couleurs secondaires */
-  --color-secondary: #d4a574;
-  --color-secondary-foreground: #2B2520;
+  --color-secondary: #1F4D2F; /* Vert Sapin */
+  --color-secondary-foreground: #F9F7F4; /* Crème/Blanc */
   
   /* Couleurs d'accent */
-  --color-accent: #1F4D2F;
-  --color-accent-foreground: #F9F7F4;
+  --color-accent: #E6B34E; /* Or Riche */
+  --color-accent-foreground: #2B2520; /* Charbon */
   
   /* Couleurs destructives */
   --color-destructive: #A41E35;
@@ -30,7 +30,7 @@
   --color-muted-foreground: #6B6460;
   --color-border: #E8E6E1;
   --color-input: #F9F7F4;
-  --color-ring: #D4A574;
+  --color-ring: #A41E35; /* Rouge pour le focus */
   
   /* Cartes et popovers */
   --color-card: #FFFFFF;
@@ -43,15 +43,15 @@
   --color-sidebar-foreground: #2B2520;
   --color-sidebar-primary: #A41E35;
   --color-sidebar-primary-foreground: #F9F7F4;
-  --color-sidebar-accent: #D4A574;
+  --color-sidebar-accent: #E6B34E; /* Or Riche */
   --color-sidebar-accent-foreground: #2B2520;
   --color-sidebar-border: #E8E6E1;
-  --color-sidebar-ring: #D4A574;
+  --color-sidebar-ring: #A41E35; /* Rouge pour le focus */
   
   /* Chart colors */
-  --color-chart-1: #D4A574;
-  --color-chart-2: #A41E35;
-  --color-chart-3: #1F4D2F;
+  --color-chart-1: #A41E35; /* Rouge */
+  --color-chart-2: #1F4D2F; /* Vert */
+  --color-chart-3: #E6B34E; /* Or */
   --color-chart-4: #8B0000;
   --color-chart-5: #2B2520;
   
@@ -67,20 +67,20 @@
   /* Dark mode: Noël Chaleureux & Inclusif */
   
   /* Couleurs de base */
-  --color-background: #1A1815;
-  --color-foreground: #F9F7F4;
+  --color-background: #1A1815; /* Fond Charbon */
+  --color-foreground: #F9F7F4; /* Crème/Blanc */
   
   /* Couleurs principales */
-  --color-primary: #E63946;
-  --color-primary-foreground: #F9F7F4;
+  --color-primary: #E63946; /* Rouge Noël */
+  --color-primary-foreground: #F9F7F4; /* Crème/Blanc */
   
   /* Couleurs secondaires */
-  --color-secondary: #D4A574;
-  --color-secondary-foreground: #1A1815;
+  --color-secondary: #1F4D2F; /* Vert Sapin */
+  --color-secondary-foreground: #F9F7F4; /* Crème/Blanc */
   
   /* Couleurs d'accent */
-  --color-accent: #1F4D2F;
-  --color-accent-foreground: #F9F7F4;
+  --color-accent: #E6B34E; /* Or Riche */
+  --color-accent-foreground: #1A1815; /* Charbon */
   
   /* Couleurs destructives */
   --color-destructive: #E63946;
@@ -91,7 +91,7 @@
   --color-muted-foreground: #B8B0A8;
   --color-border: #3D3630;
   --color-input: #2B2520;
-  --color-ring: #D4A574;
+  --color-ring: #E63946; /* Rouge pour le focus */
   
   /* Cartes et popovers */
   --color-card: #2B2520;
@@ -104,15 +104,15 @@
   --color-sidebar-foreground: #F9F7F4;
   --color-sidebar-primary: #E63946;
   --color-sidebar-primary-foreground: #F9F7F4;
-  --color-sidebar-accent: #D4A574;
-  --color-sidebar-accent-foreground: #1A1815;
+  --color-sidebar-accent: #E6B34E; /* Or Riche */
+  --color-sidebar-accent-foreground: #2B2520;
   --color-sidebar-border: #3D3630;
-  --color-sidebar-ring: #D4A574;
+  --color-sidebar-ring: #E63946; /* Rouge pour le focus */
   
   /* Chart colors */
-  --color-chart-1: #D4A574;
-  --color-chart-2: #E63946;
-  --color-chart-3: #1F4D2F;
+  --color-chart-1: #E63946; /* Rouge */
+  --color-chart-2: #1F4D2F; /* Vert */
+  --color-chart-3: #E6B34E; /* Or */
   --color-chart-4: #A41E35;
   --color-chart-5: #6B6460;
 }
