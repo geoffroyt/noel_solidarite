@@ -1,134 +1,95 @@
 @import "tailwindcss";
 
-/* Variables CSS pour Tailwind CSS v4 */
+/* Tailwind CSS v4 n'utilise plus @custom-variant et @theme inline */
+/* Utilisez plutôt :root et .dark avec des variables CSS */
+
 :root {
   /* Design System: Noël Chaleureux & Inclusif */
   /* Palette: Red Noël, Gold Warm, Cream, Charcoal, Forest Green */
   
-  /* Couleurs de base */
-  --color-background: #F9F7F4; /* Crème/Blanc pour la légèreté */
-  --color-foreground: #2B2520; /* Charbon */
-  
-  /* Couleurs principales */
-  --color-primary: #A41E35; /* Rouge Noël */
-  --color-primary-foreground: #F9F7F4; /* Crème/Blanc */
-  
-  /* Couleurs secondaires */
-  --color-secondary: #1F4D2F; /* Vert Sapin */
-  --color-secondary-foreground: #F9F7F4; /* Crème/Blanc */
-  
-  /* Couleurs d'accent */
-  --color-accent: #E6B34E; /* Or Riche */
-  --color-accent-foreground: #2B2520; /* Charbon */
-  
-  /* Couleurs destructives */
-  --color-destructive: #A41E35;
-  --color-destructive-foreground: #F9F7F4;
-  
-  /* Couleurs neutres */
-  --color-muted: #E8E6E1;
-  --color-muted-foreground: #6B6460;
-  --color-border: #E8E6E1;
-  --color-input: #F9F7F4;
-  --color-ring: #A41E35; /* Rouge pour le focus */
-  
-  /* Cartes et popovers */
-  --color-card: #FFFFFF;
-  --color-card-foreground: #2B2520;
-  --color-popover: #FFFFFF;
-  --color-popover-foreground: #2B2520;
-  
-  /* Sidebar */
-  --color-sidebar: #FFFFFF;
-  --color-sidebar-foreground: #2B2520;
+  --color-primary: #A41E35;
+  --color-primary-foreground: #F9F7F4;
   --color-sidebar-primary: #A41E35;
   --color-sidebar-primary-foreground: #F9F7F4;
-  --color-sidebar-accent: #E6B34E; /* Or Riche */
-  --color-sidebar-accent-foreground: #2B2520;
-  --color-sidebar-border: #E8E6E1;
-  --color-sidebar-ring: #A41E35; /* Rouge pour le focus */
-  
-  /* Chart colors */
-  --color-chart-1: #A41E35; /* Rouge */
-  --color-chart-2: #1F4D2F; /* Vert */
-  --color-chart-3: #E6B34E; /* Or */
+  --color-chart-1: #D4A574;
+  --color-chart-2: #A41E35;
+  --color-chart-3: #1F4D2F;
   --color-chart-4: #8B0000;
   --color-chart-5: #2B2520;
-  
-  /* Bordures arrondies */
   --radius: 0.75rem;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --background: #F9F7F4;
+  --foreground: #2B2520;
+  --card: #FFFFFF;
+  --card-foreground: #2B2520;
+  --popover: #FFFFFF;
+  --popover-foreground: #2B2520;
+  --secondary: #D4A574;
+  --secondary-foreground: #2B2520;
+  --muted: #E8E6E1;
+  --muted-foreground: #6B6460;
+  --accent: #1F4D2F;
+  --accent-foreground: #F9F7F4;
+  --destructive: #A41E35;
+  --destructive-foreground: #F9F7F4;
+  --border: #E8E6E1;
+  --input: #F9F7F4;
+  --ring: #D4A574;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #2B2520;
+  --sidebar-accent: #D4A574;
+  --sidebar-accent-foreground: #2B2520;
+  --sidebar-border: #E8E6E1;
+  --sidebar-ring: #D4A574;
 }
 
 .dark {
   /* Dark mode: Noël Chaleureux & Inclusif */
-  
-  /* Couleurs de base */
-  --color-background: #1A1815; /* Fond Charbon */
-  --color-foreground: #F9F7F4; /* Crème/Blanc */
-  
-  /* Couleurs principales */
-  --color-primary: #E63946; /* Rouge Noël */
-  --color-primary-foreground: #F9F7F4; /* Crème/Blanc */
-  
-  /* Couleurs secondaires */
-  --color-secondary: #1F4D2F; /* Vert Sapin */
-  --color-secondary-foreground: #F9F7F4; /* Crème/Blanc */
-  
-  /* Couleurs d'accent */
-  --color-accent: #E6B34E; /* Or Riche */
-  --color-accent-foreground: #1A1815; /* Charbon */
-  
-  /* Couleurs destructives */
-  --color-destructive: #E63946;
-  --color-destructive-foreground: #F9F7F4;
-  
-  /* Couleurs neutres */
-  --color-muted: #3D3630;
-  --color-muted-foreground: #B8B0A8;
-  --color-border: #3D3630;
-  --color-input: #2B2520;
-  --color-ring: #E63946; /* Rouge pour le focus */
-  
-  /* Cartes et popovers */
-  --color-card: #2B2520;
-  --color-card-foreground: #F9F7F4;
-  --color-popover: #2B2520;
-  --color-popover-foreground: #F9F7F4;
-  
-  /* Sidebar */
-  --color-sidebar: #2B2520;
-  --color-sidebar-foreground: #F9F7F4;
+  --color-primary: #E63946;
+  --color-primary-foreground: #F9F7F4;
   --color-sidebar-primary: #E63946;
   --color-sidebar-primary-foreground: #F9F7F4;
-  --color-sidebar-accent: #E6B34E; /* Or Riche */
-  --color-sidebar-accent-foreground: #2B2520;
-  --color-sidebar-border: #3D3630;
-  --color-sidebar-ring: #E63946; /* Rouge pour le focus */
-  
-  /* Chart colors */
-  --color-chart-1: #E63946; /* Rouge */
-  --color-chart-2: #1F4D2F; /* Vert */
-  --color-chart-3: #E6B34E; /* Or */
-  --color-chart-4: #A41E35;
-  --color-chart-5: #6B6460;
+  --background: #1A1815;
+  --foreground: #F9F7F4;
+  --card: #2B2520;
+  --card-foreground: #F9F7F4;
+  --popover: #2B2520;
+  --popover-foreground: #F9F7F4;
+  --secondary: #D4A574;
+  --secondary-foreground: #1A1815;
+  --muted: #3D3630;
+  --muted-foreground: #B8B0A8;
+  --accent: #1F4D2F;
+  --accent-foreground: #F9F7F4;
+  --destructive: #E63946;
+  --destructive-foreground: #F9F7F4;
+  --border: #3D3630;
+  --input: #2B2520;
+  --ring: #D4A574;
+  --chart-1: #D4A574;
+  --chart-2: #E63946;
+  --chart-3: #1F4D2F;
+  --chart-4: #A41E35;
+  --chart-5: #6B6460;
+  --sidebar: #2B2520;
+  --sidebar-foreground: #F9F7F4;
+  --sidebar-accent: #D4A574;
+  --sidebar-accent-foreground: #1A1815;
+  --sidebar-border: #3D3630;
+  --sidebar-ring: #D4A574;
 }
 
-/* Styles de base */
-* {
-  border-color: var(--color-border);
-}
+/* Supprimez les @apply et utilisez les classes Tailwind directement */
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: 'Inter', sans-serif;
 }
 
-/* Typographie */
 h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
@@ -157,19 +118,6 @@ h4, h5, h6 {
   font-weight: 600;
 }
 
-/* Curseurs pour éléments interactifs */
-button:not(:disabled),
-[role="button"]:not([aria-disabled="true"]),
-[type="button"]:not(:disabled),
-[type="submit"]:not(:disabled),
-[type="reset"]:not(:disabled),
-a[href],
-select:not(:disabled),
-input[type="checkbox"]:not(:disabled),
-input[type="radio"]:not(:disabled) {
-  cursor: pointer;
-}
-
 /* Custom scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -177,11 +125,11 @@ input[type="radio"]:not(:disabled) {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-background);
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-secondary);
+  background: var(--secondary);
   border-radius: 4px;
 }
 
@@ -198,6 +146,11 @@ input[type="radio"]:not(:disabled) {
   padding-right: 1rem;
 }
 
+.flex {
+  min-height: 0;
+  min-width: 0;
+}
+
 @media (min-width: 640px) {
   .container {
     padding-left: 1.5rem; /* 24px - tablet padding */
@@ -211,10 +164,4 @@ input[type="radio"]:not(:disabled) {
     padding-right: 2rem;
     max-width: 1280px; /* Standard content width */
   }
-}
-
-/* Classe utilitaire pour les flex containers */
-.flex {
-  min-height: 0;
-  min-width: 0;
 }

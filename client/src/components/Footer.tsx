@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 /**
  * Footer Component
@@ -9,6 +10,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'luc
  */
 
 export default function Footer() {
+  const [, setLocation] = useLocation();
   const currentYear = new Date().getFullYear();
 
   const links = {
@@ -19,9 +21,9 @@ export default function Footer() {
       { label: 'Nous contacter', href: '/contact' },
     ],
     legal: [
-      { label: "Mentions légales", href: '/mentions-legales' },
-      { label: "Politique de confidentialité", href: '/politique-confidentialite' },
-       { label: "Conditions d'utilisation", href: '/conditions-utilisation' },
+      { label: 'Mentions légales', href: '#' },
+      { label: 'Politique de confidentialité', href: '#' },
+      { label: 'Conditions d\'utilisation', href: '#' },
     ],
   };
 
@@ -33,7 +35,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-gradient-to-r from-red-700 to-red-900 text-white">
       {/* Main Footer Content */}
       <div className="container py-16 md:py-20">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
@@ -44,24 +46,28 @@ export default function Footer() {
                 <span className="text-foreground font-bold text-lg">🎁</span>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-background">Noël de Solidarité</h3>
-                <p className="text-sm text-background/70">Marseille & Guadeloupe</p>
+                <h3 className="font-bold text-lg">Noël de Solidarité</h3>
+                <p className="text-sm text-white/70">Marseille & Guadeloupe</p>
               </div>
             </div>
-            <p className="text-sm text-background/70 leading-relaxed">
+            <p className="text-sm text-white/70 leading-relaxed">
               Ensemble, transformons Noël en moment de partage et d'espoir pour les enfants défavorisés.
             </p>
           </div>
 
           {/* Navigation Links */}
           <div>
-            <h4 className="font-bold mb-4 text-background">Navigation</h4>
+            <h4 className="font-bold mb-4 text-white">Navigation</h4>
             <ul className="space-y-2">
               {links.navigation.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-background/70 hover:text-secondary transition-colors text-sm"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setLocation(link.href);
+                    }}
+                    className="text-white/80 hover:text-yellow-300 transition-colors text-sm cursor-pointer"
                   >
                     {link.label}
                   </a>
@@ -72,13 +78,13 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-bold mb-4 text-background">Légal</h4>
+            <h4 className="font-bold mb-4 text-white">Légal</h4>
             <ul className="space-y-2">
               {links.legal.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-background/70 hover:text-secondary transition-colors text-sm"
+                    className="text-white/80 hover:text-yellow-300 transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -89,24 +95,24 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold mb-4 text-background">Contact</h4>
+            <h4 className="font-bold mb-4 text-white">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-secondary" />
-                <div className="text-sm text-background/70">
+                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-yellow-300" />
+                <div className="text-sm text-white/80">
                   <p>Marseille, France</p>
                   <p>Guadeloupe</p>
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 flex-shrink-0 text-secondary" />
-                <a href="tel:+33123456789" className="text-sm text-background/70 hover:text-secondary transition-colors">
+                <Phone className="w-4 h-4 flex-shrink-0 text-yellow-300" />
+                <a href="tel:+33123456789" className="text-sm text-white/80 hover:text-yellow-300 transition-colors">
                   +33 1 23 45 67 89
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 flex-shrink-0 text-secondary" />
-                <a href="mailto:contact@noelsolidarite.fr" className="text-sm text-background/70 hover:text-secondary transition-colors">
+                <Mail className="w-4 h-4 flex-shrink-0 text-yellow-300" />
+                <a href="mailto:contact@noelsolidarite.fr" className="text-sm text-white/80 hover:text-yellow-300 transition-colors">
                   contact@noelsolidarite.fr
                 </a>
               </li>
@@ -115,12 +121,12 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-background/10 pt-8 mb-8"></div>
+        <div className="border-t border-white/20 pt-8 mb-8"></div>
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
-          <p className="text-sm text-background/70">
+          <p className="text-sm text-white/80">
             © {currentYear} Noël de Solidarité. Tous droits réservés.
           </p>
 
@@ -131,7 +137,7 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="text-background/70 hover:text-secondary transition-colors"
+                className="text-white/80 hover:text-yellow-300 transition-colors"
               >
                 <Icon className="w-5 h-5" />
               </a>
@@ -139,8 +145,8 @@ export default function Footer() {
           </div>
 
           {/* Transparency Badge */}
-          <div className="text-xs text-background/70 text-center md:text-right">
-            <p className="font-semibold text-background mb-1">100% Transparent</p>
+          <div className="text-xs text-white/80 text-center md:text-right">
+            <p className="font-semibold text-yellow-300 mb-1">100% Transparent</p>
             <p>Chaque don est documenté et tracé</p>
           </div>
         </div>

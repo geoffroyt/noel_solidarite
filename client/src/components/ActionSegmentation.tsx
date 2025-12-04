@@ -24,35 +24,35 @@ interface ActionCardProps {
 function ActionCard({ icon, title, description, actions, cta, color, href }: ActionCardProps) {
   const [, setLocation] = useLocation();
   const colorClasses = {
-    primary: 'border-primary/20 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10',
-    secondary: 'border-secondary/20 hover:border-secondary/50 hover:shadow-lg hover:shadow-secondary/10',
-    accent: 'border-accent/20 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10',
+    primary: 'border-green-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-200',
+    secondary: 'border-blue-300 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-200',
+    accent: 'border-purple-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-200',
   };
 
   const buttonClasses = {
-    primary: 'bg-primary hover:bg-primary/90 text-primary-foreground',
-    secondary: 'bg-secondary hover:bg-secondary/90 text-secondary-foreground',
-    accent: 'bg-accent hover:bg-accent/90 text-accent-foreground',
+    primary: 'bg-green-600 hover:bg-green-700 text-white',
+    secondary: 'bg-blue-600 hover:bg-blue-700 text-white',
+    accent: 'bg-purple-600 hover:bg-purple-700 text-white',
   };
 
   return (
     <Card className={`p-8 border-2 transition-all duration-300 ${colorClasses[color]}`}>
       <div className="flex items-start gap-4 mb-6">
-        <div className={`p-3 rounded-lg ${color === 'primary' ? 'bg-primary/10' : color === 'secondary' ? 'bg-secondary/10' : 'bg-accent/10'}`}>
+        <div className={`p-3 rounded-lg ${color === 'primary' ? 'bg-green-100' : color === 'secondary' ? 'bg-blue-100' : 'bg-purple-100'}`}>
           {icon}
         </div>
         <div>
-          <h3 className="text-xl font-bold text-foreground">{title}</h3>
+          <h3 className="text-xl font-bold text-gray-900">{title}</h3>
         </div>
       </div>
 
-      <p className="text-muted-foreground mb-6 leading-relaxed">{description}</p>
+      <p className="text-gray-700 mb-6 leading-relaxed">{description}</p>
 
       <div className="space-y-2 mb-8">
         {actions.map((action, idx) => (
           <div key={idx} className="flex items-start gap-3">
-            <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-            <span className="text-sm text-foreground">{action}</span>
+            <ArrowRight className={`w-4 h-4 ${color === 'primary' ? 'text-green-600' : color === 'secondary' ? 'text-blue-600' : 'text-purple-600'} mt-1 flex-shrink-0`} />
+            <span className="text-sm text-gray-800">{action}</span>
           </div>
         ))}
       </div>
@@ -111,13 +111,13 @@ export default function ActionSegmentation() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-gray-50">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Qui peut agir ?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Que vous soyez particulier, entreprise ou association, il existe un rôle pour vous dans cette campagne solidaire.
           </p>
         </div>

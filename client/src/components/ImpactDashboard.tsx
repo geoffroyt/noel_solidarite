@@ -83,14 +83,14 @@ export default function ImpactDashboard() {
     {
       icon: <Gift className="w-6 h-6" />,
       label: 'Cadeaux offerts',
-      value: 600,
+      value: 342,
       suffix: '',
       color: 'secondary',
     },
     {
       icon: <Users className="w-6 h-6" />,
       label: 'Enfants aidés',
-      value: 387,
+      value: 285,
       suffix: '',
       color: 'accent',
     },
@@ -103,7 +103,7 @@ export default function ImpactDashboard() {
     },
   ];
 
-  const targetAmount = 20000;
+  const targetAmount = 100000;
   const currentAmount = 48500;
   const progressPercentage = (currentAmount / targetAmount) * 100;
 
@@ -160,7 +160,7 @@ export default function ImpactDashboard() {
             </div>
             <div>
               <p className="text-sm text-muted-foreground mb-1">Autres régions</p>
-              <p className="text-2xl font-bold text-accent">102</p>
+              <p className="text-2xl font-bold text-accent">0</p>
               <p className="text-xs text-muted-foreground">enfants aidés</p>
             </div>
           </div>
