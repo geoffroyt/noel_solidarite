@@ -76,35 +76,35 @@ export default function ImpactDashboard() {
     {
       icon: <Heart className="w-6 h-6" />,
       label: 'Dons reçus',
-      value: 487,
+      value:0,
       suffix: '',
       color: 'primary',
     },
     {
       icon: <Gift className="w-6 h-6" />,
       label: 'Cadeaux offerts',
-      value: 342,
+      value: 0,
       suffix: '',
       color: 'secondary',
     },
     {
       icon: <Users className="w-6 h-6" />,
       label: 'Enfants aidés',
-      value: 285,
+      value: 0,
       suffix: '',
       color: 'accent',
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       label: 'Montant collecté',
-      value: 48500,
+      value: 0,
       suffix: '€',
       color: 'primary',
     },
   ];
 
-  const targetAmount = 100000;
-  const currentAmount = 48500;
+  const targetAmount = 20000;
+  const currentAmount = 0;
   const progressPercentage = (currentAmount / targetAmount) * 100;
 
   return (
@@ -150,12 +150,12 @@ export default function ImpactDashboard() {
           <div className="grid md:grid-cols-3 gap-4 text-center">
             <div>
               <p className="text-sm text-muted-foreground mb-1">Marseille</p>
-              <p className="text-2xl font-bold text-primary">156</p>
+              <p className="text-2xl font-bold text-primary">0</p>
               <p className="text-xs text-muted-foreground">enfants aidés</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground mb-1">Guadeloupe</p>
-              <p className="text-2xl font-bold text-secondary">129</p>
+              <p className="text-2xl font-bold text-secondary">0</p>
               <p className="text-xs text-muted-foreground">enfants aidés</p>
             </div>
             <div>
