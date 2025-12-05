@@ -45,13 +45,13 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@noel-solidarite.fr',
+      value: 'contact@noelsolidarite.fr',
       description: 'Nous répondons généralement en 24-48h',
     },
     {
       icon: Phone,
       title: 'Téléphone',
-      value: '+33 (0)4 91 XX XX XX',
+      value: '+33 6 44 67 42 57',
       description: 'Lundi-Vendredi, 9h-17h',
     },
     {
@@ -145,7 +145,7 @@ export default function Contact() {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+33 1 23 45 67 89"
+                      placeholder="+33 6 44 67 42 57"
                       value={formData.phone}
                       onChange={handleChange}
                     />

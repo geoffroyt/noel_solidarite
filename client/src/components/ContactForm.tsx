@@ -75,10 +75,10 @@ export default function ContactForm() {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Téléphone</h3>
                   <a
-                    href="tel:+33123456789"
+                    href="tel:+33644674257"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +33 1 23 45 67 89
+                    +33 6 44 67 42 57
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">Lun-Ven 9h-18h</p>
                 </div>
@@ -102,7 +102,7 @@ export default function ContactForm() {
                     <p>
                       <strong>Guadeloupe</strong>
                       <br />
-                      97100 Basse-Terre, Guadeloupe
+                      97115 saint rose, Guadeloupe
                     </p>
                   </div>
                 </div>
